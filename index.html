@@ -1,0 +1,157 @@
+A gallery of posters about CERN made by students from the Liceul Teoretic "Emil Racoviță", Baia Mare, Romania about CERN, dedicated to CERN's 70th anniversary.
+O galerie cu afișe realizate de elevii de la Liceul Teoretic "Emil Racoviță" Baia Mare, România despre CERN, dedicată celor 70 de ani de la înființarea CERN-ului. 
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galerie 70 CERN </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #003366;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .item {
+      background: white;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .item:hover {
+      transform: scale(1.05);
+    }
+    .item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .title {
+      font-weight: bold;
+      color: #003366;
+      margin-bottom: 5px;
+      font-size: 1.1em;
+    }
+    .link {
+      font-size: 0.9em;
+      color: #0066cc;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 0;
+    }
+    .link:hover {
+      text-decoration: underline;
+    }
+    /* Overlay pentru imaginea mărită */
+    #overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      cursor: pointer;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    #overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Galerie Afișe CERN</h1>
+  <div class="gallery">
+    <div class="item" data-title="Bring nations together">
+      <img src="afis1.jpg" alt="Afiș CERN 1" />
+      <div class="title">70 years of CERN </div>
+      <a href="https://home.cern/about/what-we-do/bring-nations-together" class="...........1" target="_blank" rel="noopener noreferrer">Bring nations together</a>
+    </div>
+    <div class="item" data-title="Complexul Acceleratorului">
+      <img src="afis2.jpg" alt="Afiș CERN 2" />
+      <div class="title">CERN’s accelerator complex</div>
+      <a href="https://home.cern/science/accelerators/accelerator-complex" class="...........2" target="_blank" rel="noopener noreferrer">Link</a>
+    </div>
+    <div class="item" data-title="CERN’s accelerator complex">
+      <img src="afis3.jpg" alt="Afiș CERN 3" />
+      <div class="title">CERN’s accelerator complex</div>
+      <a href="https://exemplu3.ro" class="https://home.cern/science/accelerators/accelerator-complex" target="_blank" rel="noopener noreferrer">Link</a>
+    </div>
+    <div class="item" data-title="How can CERN improve healthcare?">
+      <img src="afis4.jpg" alt="Afiș CERN 4" />
+      <div class="title">How can CERN improve healthcare?</div>
+      <a href="https://kt.cern/applications/healthcare" class=".............4" target="_blank" rel="noopener noreferrer">Link</a>
+    </div>
+    <div class="item" data-title="ATLAS">
+      <img src="afis5.jpg" alt="Afiș CERN 5" />
+      <div class="title">ATLAS</div>
+      <a href="https://home.cern/science/experiments/atlas" class=".....5" target="_blank" rel="noopener noreferrer">Link</a>
+    </div>
+    <div class="item" data-title="The birth of the Web">
+      <img src="afis6.jpg" alt="Afiș CERN 6" />
+      <div class="title">The birth of the Web</div>
+      <a href="https://home.cern/science/computing/birth-web" class=".............6" target="_blank" rel="noopener noreferrer">Link</a>
+    </div>
+    <div class="item" data-title="What is CERN's mission?">
+      <img src="afis7.jpg" alt="Afiș CERN 7" />
+      <div class="title">What is CERN's mission?</div>
+      <a href="https://home.cern/about/who-we-are/our-mission" class="............" target="_blank" rel="noopener noreferrer">Link</a>
+    </div>
+    <div class="item" data-title="The Large Hadron Collider">
+      <img src="afis8.jpg" alt="Afiș CERN 8" />
+      <div class="title">The Large Hadron Collider</div>
+      <a href="https://home.cern/science/accelerators/large-hadron-collider" class="..........8" target="_blank" rel="noopener noreferrer">Link</a>
+    </div>
+    <div class="item" data-title="Titlul 9">
+      <img src="afis9.jpg" alt="Afiș CERN 9" />
+      <div class="title">About CERN</div>
+      <a href="https://home.cern/about" class="https://home.cern/about" target="_blank" rel="noopener noreferrer">Link</a>
+    </div>
+  </div>
+
+  <div id="overlay">
+    <img src="" alt="Imagine mărită" />
+  </div>
+
+  <script>
+    const overlay = document.getElementById('overlay');
+    const overlayImage = overlay.querySelector('img');
+    const galleryItems = document.querySelectorAll('.item');
+
+    galleryItems.forEach(item => {
+      // Pentru mărire la click doar pe imagine
+      const img = item.querySelector('img');
+      img.addEventListener('click', (event) => {
+        event.stopPropagation(); // să nu declanșeze click-ul pe item
+        overlayImage.src = img.src;
+        overlay.style.display = 'flex';
+      });
+    });
+
+    overlay.addEventListener('click', () => {
+      overlay.style.display = 'none';
+      overlayImage.src = '';
+    });
+  </script>
+</body>
+</html>
